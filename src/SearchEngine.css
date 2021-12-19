@@ -1,4 +1,13 @@
 .SearchEngine {
-  margin-top: 40px;
   padding: 40px 0;
+}
+
+.btn-dark {
+  font-weight: bold;
+}
+
+.btn-dark:hover {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
 }

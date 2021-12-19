@@ -5,7 +5,7 @@ import Header from "./Header.js";
 import "./SearchEngine.css";
 
 export default function SearchEngine() {
-  const [keyword, setKeyword] = useState(null);
+  const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
 
   function handleSubmit(event) {
