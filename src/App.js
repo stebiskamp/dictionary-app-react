@@ -9,6 +9,16 @@ function App() {
           <SearchEngine />
         </header>
       </div>
+      <footer>
+        <a
+          href="https://github.com/stebiskamp/dictionary-app-react"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open-source coded
+        </a>{" "}
+        by Stephanie Biskamp
+      </footer>
     </div>
   );
 }
