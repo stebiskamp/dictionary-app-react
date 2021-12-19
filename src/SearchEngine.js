@@ -47,7 +47,7 @@ export default function SearchEngine() {
             Submit
           </button>
         </div>
-        <div className="col-4">
+        <div className="col-7">
           <Header results={results} />
         </div>
       </form>
