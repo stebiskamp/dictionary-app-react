@@ -26,8 +26,8 @@ export default function SearchEngine() {
   }
 
   return (
-    <div className="SearchEngine">
-      <form className="row">
+    <div>
+      <form className="row SearchEngine">
         <div className="col-4">
           <input
             type="search"

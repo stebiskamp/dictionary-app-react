@@ -7,7 +7,7 @@ export default function Results(props) {
     return (
       <div className="Results">
         <div className="row">
-          <div className="col-10">
+          <div className="col-6">
             {props.results.meanings.map(function (meanings, index) {
               return (
                 <div key={index}>

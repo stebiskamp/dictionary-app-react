@@ -4,7 +4,7 @@ import "./Header.css";
 export default function Header(props) {
   if (props.results) {
     return (
-      <div className="Header">
+      <div className="Header text-capitalize">
         {props.results.word}
         <span className="Phonetic"> {props.results.phonetic}</span>
       </div>
