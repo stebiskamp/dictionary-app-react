@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./SearchEngine.css";
 
 export default function SearchEngine() {
@@ -6,7 +7,11 @@ export default function SearchEngine() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    alert(keyword);
+    alert(`Searching for ${keyword}`);
+
+    //URL for documentation: https://dictionaryapi.dev/
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function handleChange(event) {
@@ -14,19 +19,24 @@ export default function SearchEngine() {
     setKeyword(event.target.value);
   }
 
+  function handleResponse(response) {
+    console.log(response.data[0]);
+  }
+
   return (
     <div className="SearchEngine">
       <form className="row">
-        <div class="col-4">
+        <div className="col-4">
           <input
             type="search"
             className="form-control"
             placeholder="Username"
+            autoFocus="on"
             onChange={handleChange}
           ></input>
         </div>
 
-        <div class="col-4">
+        <div className="col-4">
           <button
             type="submit"
             className="btn btn-primary"
