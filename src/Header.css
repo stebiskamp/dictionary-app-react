@@ -1,0 +1,12 @@
+.Header {
+  text-align: left;
+  font-size: 50px;
+}
+
+span.Phonetic {
+  font-size: 35px;
+}
+
+div.Header {
+  padding: 0 12px;
+}
