@@ -1,10 +1,14 @@
 .Header {
+  margin-top: 20px;
   font-size: 50px;
   font-family: "Permanent Marker", cursive;
+  color: #f95959;
 }
 
 span.Phonetic {
   font-size: 35px;
+  font-family: "ABeeZee", sans-serif;
+  font-style: italic;
 }
 
 div.Header {

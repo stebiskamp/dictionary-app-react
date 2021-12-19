@@ -1,10 +1,10 @@
 import React from "react";
 import Synonyms from "./Synonyms";
+import "./Definitions.css";
 
 export default function Definitions(props) {
-  console.log(props.definitions);
   return (
-    <div>
+    <div className="Definitions">
       {" "}
       {props.definitions.definition}
       <br />

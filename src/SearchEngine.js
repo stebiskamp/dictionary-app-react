@@ -26,8 +26,8 @@ export default function SearchEngine() {
   }
 
   return (
-    <div>
-      <form className="row SearchEngine">
+    <div className="SearchEngine">
+      <form className="row">
         <div className="col-4">
           <input
             type="search"
@@ -37,20 +37,15 @@ export default function SearchEngine() {
             onChange={handleChange}
           ></input>
         </div>
-
         <div className="col-1">
-          <button
-            type="submit"
-            className="btn btn-primary"
-            onClick={handleSubmit}
-          >
+          <button type="submit" className="btn btn-dark" onClick={handleSubmit}>
             Submit
           </button>
         </div>
-        <div className="col-7">
-          <Header results={results} />
-        </div>
       </form>
+      <div className="col-5">
+        <Header results={results} />
+      </div>
       <Results results={results} />
     </div>
   );
