@@ -6,18 +6,21 @@ export default function Meanings(props) {
   return (
     <div className="Meanings">
       <h5>
-        <strong> {props.meanings.partOfSpeech}</strong>
+        <strong className="text-capitalize">
+          {" "}
+          {props.meanings.partOfSpeech}
+        </strong>
       </h5>
       <h6>
         {props.meanings.definitions.map(function (definitions, index) {
           return (
             <div key={index}>
-              <Definitions definitions={definitions} />
+              <Definitions definitions={definitions} data={index} />
             </div>
           );
         })}
       </h6>
-      <br />{" "}
+      <br />
     </div>
   );
 }
