@@ -1,5 +1,4 @@
 .Header {
-  margin-top: 20px;
   font-size: 50px;
   font-family: "Permanent Marker", cursive;
   color: #f95959;
@@ -13,4 +12,9 @@ span.Phonetic {
 
 div.Header {
   padding: 0 12px;
+}
+
+.react-audio-player {
+  height: 45px;
+  width: 200x;
 }
