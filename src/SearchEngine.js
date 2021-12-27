@@ -8,6 +8,7 @@ import "./SearchEngine.css";
 export default function SearchEngine() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
+  const [keywordResult, setKeywordResult] = useState("");
   const [pexelsResults, setPexelsResults] = useState(null);
 
   function handleSubmit(event) {
@@ -17,9 +18,11 @@ export default function SearchEngine() {
     axios.get(apiUrl).then(handleResponse);
 
     const pexelsApiKey = `563492ad6f91700001000001a1505f7d1d3045c99b278af6ba29611c`;
-    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=8"`;
+    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keywordResult}&per_page=6"`;
     axios
-      .get(pexelsUrl, { headers: { Authorization: `Bearer ${pexelsApiKey}` } })
+      .get(pexelsUrl, {
+        headers: { Authorization: `Bearer ${pexelsApiKey}` },
+      })
       .then(handlePexelsResponse);
   }
 
@@ -29,6 +32,7 @@ export default function SearchEngine() {
   }
 
   function handleResponse(response) {
+    setKeywordResult(response.data[0].word);
     setResults(response.data[0]);
   }
 
@@ -62,6 +66,16 @@ export default function SearchEngine() {
           </form>
           <Header results={results} />
           <Results results={results} />
+          <footer>
+            <a
+              href="https://github.com/stebiskamp/dictionary-app-react"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open-source coded
+            </a>{" "}
+            by Stephanie Biskamp
+          </footer>
         </div>
         <div className="col-6">
           <Photos pexelsResults={pexelsResults} />
