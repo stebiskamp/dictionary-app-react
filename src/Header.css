@@ -1,8 +1,5 @@
-.Header {
-  font-size: 50px;
-  font-family: "Permanent Marker", cursive;
-  color: #f95959;
-  margin-top: 15px;
+div.Header {
+  padding: 0 12px;
 }
 
 span.Phonetic {
@@ -11,8 +8,11 @@ span.Phonetic {
   font-style: italic;
 }
 
-div.Header {
-  padding: 0 12px;
+.Header {
+  color: #f95959;
+  font-family: "Permanent Marker", cursive;
+  font-size: 50px;
+  margin-top: 15px;
 }
 
 .react-audio-player {

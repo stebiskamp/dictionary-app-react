@@ -9,11 +9,12 @@ h1 {
 }
 
 h2 {
-  font-family: "ABeeZee", sans-serif;
   color: #000;
+  font-family: "ABeeZee", sans-serif;
+  font-style: italic;
 }
 
 .App {
-  max-width: 100%;
   margin: 70px 0;
+  max-width: 100%;
 }
