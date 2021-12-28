@@ -25,7 +25,7 @@ export default function SearchEngine() {
       .then(setNewKeyword)
       .catch(() => {
         alert(
-          `Ok, we are not that Amazing =S We don't have the word "${keyword}" in our database`
+          `Ok, we are not that amazing =S We don't have the word "${keyword}" in our database.`
         );
       });
   }
@@ -38,7 +38,7 @@ export default function SearchEngine() {
   function setNewKeyword() {
     console.log(keyword);
     const pexelsApiKey = `563492ad6f91700001000001a1505f7d1d3045c99b278af6ba29611c`;
-    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=6"`;
+    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9"`;
     axios
       .get(pexelsUrl, {
         headers: { Authorization: `Bearer ${pexelsApiKey}` },

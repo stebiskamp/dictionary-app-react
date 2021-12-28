@@ -8,7 +8,7 @@ export default function Photos(props) {
         <div className="row">
           {props.pexelsResults.map(function (photos, index) {
             return (
-              <div key={index} className="col-6">
+              <div key={index} className="col-4">
                 <a href={photos.src.original} target="_blank" rel="noreferrer">
                   <img
                     src={photos.src.portrait}
