@@ -4,6 +4,7 @@ import ReactAudioPlayer from "react-audio-player";
 
 export default function Header(props) {
   if (props.results) {
+    console.log(props.results);
     return (
       <div className="Header text-capitalize">
         {props.results.word}

@@ -8,32 +8,42 @@ import "./SearchEngine.css";
 export default function SearchEngine() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState(null);
-  const [keywordResult, setKeywordResult] = useState("");
   const [pexelsResults, setPexelsResults] = useState(null);
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    //URL for documentation: https://dictionaryapi.dev/
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
-
-    const pexelsApiKey = `563492ad6f91700001000001a1505f7d1d3045c99b278af6ba29611c`;
-    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keywordResult}&per_page=6"`;
-    axios
-      .get(pexelsUrl, {
-        headers: { Authorization: `Bearer ${pexelsApiKey}` },
-      })
-      .then(handlePexelsResponse);
-  }
 
   function handleChange(event) {
     event.preventDefault();
     setKeyword(event.target.value);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    //URL for documentation: https://dictionaryapi.dev/
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+    axios
+      .get(apiUrl)
+      .then(handleResponse)
+      .then(setNewKeyword)
+      .catch(() => {
+        alert(
+          `Ok, we are not that Amazing =S We don't have the word "${keyword}" in our database`
+        );
+      });
+  }
+
   function handleResponse(response) {
-    setKeywordResult(response.data[0].word);
     setResults(response.data[0]);
+    setKeyword(response.data[0].word);
+  }
+
+  function setNewKeyword() {
+    console.log(keyword);
+    const pexelsApiKey = `563492ad6f91700001000001a1505f7d1d3045c99b278af6ba29611c`;
+    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=6"`;
+    axios
+      .get(pexelsUrl, {
+        headers: { Authorization: `Bearer ${pexelsApiKey}` },
+      })
+      .then(handlePexelsResponse);
   }
 
   function handlePexelsResponse(response) {
